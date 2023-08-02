@@ -3,21 +3,45 @@ body {
     color: rgb(68, 68, 68);
 }
 
+#page-logo a {
+    color: rgb(183, 230, 235);
+}
+
 header {
     /* static은 포지션의 기본값 */
     position: static;
 }
 
+header a {
+    color: rgb(183, 230, 235);
+}
+
+header nav a:hover {
+    background-color: rgb(183, 230, 235);
+    color: rgb(59, 59, 59);
+}
+
 main ul {
-    width: 1500px;
-    margin: 0 auto;
-        
+    width: 1200px;
+    margin: 0 auto 48px auto;
+
+    /* 카드 레이아웃 만들때 diplay : grid 써보기 */
+    display: grid;
+    /* 레이아웃을 공평하게 2열로 나눌때 1fr 1fr */
+    grid-template-columns: 1fr 1fr;
+    /* 행과 열의 간격을 나눌 때 */
+    gap: 20px 20px;
+}
+
+/* 리스트의 3번째인 런던 사진만 넣고싶을때 */
+li:nth-of-type(3) {
+    grid-column: 1 / span 2;
 }
 
 main li {
     display: flex;
-    width: 500px;
-    background-color: white;
+    
+    background-color: white; 
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
 
@@ -36,6 +60,10 @@ main li img {
     display: flex;
     flex-direction: column ;
     justify-content: space-between;
+}
+
+.item-content h2 {
+    margin: 0;
 }
 
 .actions    {
